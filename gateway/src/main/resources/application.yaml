@@ -1,0 +1,123 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: sucursales
+            uri: http://localhost:8081
+            predicates:
+              - Path=/api/v1/sucursales/**
+
+          - id: empleados
+            uri: http://localhost:8081
+            predicates:
+              - Path=/api/v1/empleados/**
+
+
+
+          - id: productos
+            uri: http://localhost:8083
+            predicates:
+              - Path=/api/v1/productos/**
+
+          - id: categorias
+            uri: http://localhost:8083
+            predicates:
+              - Path=/api/v1/categorias/**
+
+
+
+          - id: tickets
+            uri: http://localhost:8084
+            predicates:
+              - Path=/api/v1/tickets/**
+
+          - id: estados
+            uri: http://localhost:8084
+            predicates:
+              - Path=/api/v1/estados/**
+
+          - id: tipo-tickets
+            uri: http://localhost:8084
+            predicates:
+              - Path=/api/v1/tipo-tickets/**
+
+
+
+          - id: ventas
+            uri: http://localhost:8085
+            predicates:
+              - Path=/api/v1/ventas/**
+
+
+
+          - id: metodos-pago
+            uri: http://localhost:8086
+            predicates:
+              - Path=/api/v1/metodos-pago/**
+
+          - id: movimientos
+            uri: http://localhost:8086
+            predicates:
+              - Path=/api/v1/movimientos/**
+
+
+
+          - id: clientes
+            uri: http://localhost:8087
+            predicates:
+              - Path=/api/v1/clientes/**
+
+          - id: pedidos
+            uri: http://localhost:8087
+            predicates:
+              - Path=/api/v1/pedidos/**
+
+
+
+          - id: metricas
+            uri: http://localhost:8088
+            predicates:
+              - Path=/api/v1/metricas/**
+
+
+
+          - id: usuarios
+            uri: http://localhost:8089
+            predicates:
+              - Path=/api/v1/usuarios/**
+
+          - id: roles
+            uri: http://localhost:8089
+            predicates:
+              - Path=/api/v1/roles/**
+
+
+
+          - id: reportes
+            uri: http://localhost:8090
+            predicates:
+              - Path=/api/v1/reportes/**
+
+
+
+          - id: cupones
+            uri: http://localhost:8091
+            predicates:
+              - Path=/api/v1/cupones/**
+
+          - id: campanas
+            uri: http://localhost:8091
+            predicates:
+              - Path=/api/v1/campanas/**
+
+          - id: reglas
+            uri: http://localhost:8091
+            predicates:
+              - Path=/api/v1/reglas/**
